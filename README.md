@@ -1,7 +1,5 @@
 # Decomposition-Attacks-and-AI-Red-Teaming
 
-
-CASI–MATS Application
 This repository is prepared as part of the Carnegie AI Safety Initiative (CASI) x MATS-style fellowship application.  
 Carnegie Mellon University
 ---
@@ -73,7 +71,7 @@ This dataset shows how two harmless, educational prompts can be composed to reve
 - Focused on *concept chaining* rather than explicit exploit code.  
 - Scaling strategy: use LLMs to propose and classify sub-queries, then human-verify their compositional risk.
 
-This dataset is saved as `cybersecurity_decomposition_dataset.csv`.
+Open the dataset here: [cybersecurity_decomposition_dataset.csv](./cybersecurity_decomposition_dataset.csv)
 
 ---
 
