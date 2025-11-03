@@ -1,13 +1,13 @@
 # Decomposition-Attacks-and-AI-Red-Teaming
-casi-mats-application
 
-# CASI–MATS Application — Nicole Lyu  
-This repository is prepared as part of the **Carnegie AI Safety Initiative (CASI) x MATS-style fellowship** application.  
-**Carnegie Mellon University – MS in Artificial Intelligence Systems Management (Class of 2026)**  
+
+## CASI–MATS Application — Nicole Lyu ## 
+This repository is prepared as part of the Carnegie AI Safety Initiative (CASI) x MATS-style fellowship** application.  
+Carnegie Mellon University – MS in Artificial Intelligence Systems Management (Class of 2026)
 ---
 
 ## Overview
-This repository contains my responses to the **CASI–MATS Pilot Research Fellowship Application**.  
+This repository contains my responses to the CASI–MATS Pilot Research Fellowship Application.
 Each section below corresponds to the technical prompts (2.1.1–2.1.6) outlined in the official call for participation.
 
 ---
