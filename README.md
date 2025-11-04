@@ -12,7 +12,7 @@ Each section below corresponds to the technical prompts (2.1.1–2.1.6) outlined
 
 ## 2.1.1 — Evidence for LM WMDP Capabilities
 
-The **Virology Capabilities Test (VCT)** [Göting et al., 2025] benchmark evaluates whether large language models (LLMs) possess *virology reasoning* and laboratory procedure knowledge relevant to biosecurity risks.  
+The **Virology Capabilities Test (VCT)** [Göting et al., 2025] benchmark evaluates whether large language models (LLMs) possess virology reasoning and laboratory procedure knowledge relevant to biosecurity risks.  
 - The benchmark tests model ability to answer stepwise virology Q&A tasks (e.g., PCR steps, genome assembly).  
 - The strongest model (OpenAI o3) achieved 43.8% accuracy, exceeding average virology graduate student performance.  
 
@@ -32,17 +32,17 @@ What I'd demand as a reviewer: Run a wet-lab uplift study. Have human teams perf
 
 ## 2.1.2 — Getting Familiar with the Threat Model
 
-**Jones, Dragan, & Steinhardt (2024)** propose a *multi-model threat model*, where several individually safe LLMs can be chained to produce unsafe outcomes.  
-- Unlike traditional *single-shot jailbreaking*, this involves **composing multiple models** that cooperate to bypass safeguards.  
+**Jones, Dragan, & Steinhardt (2024)** propose a multi-model threat model, where several individually safe LLMs can be chained to produce unsafe outcomes.  
+- Unlike traditional single-shot jailbreaking, this involves composing multiple models that cooperate to bypass safeguards.  
 - Example: one model decomposes a dangerous question into “safe” sub-tasks, and another model reassembles results.
 
 #### My implementation attempt
 
 I created a small cybersecurity dataset with 10 decomposed query pairs (see full methodology in section 2.1.4). I tested four of these pairs using GPT-5 and ran three tests for each case:
 
-1. **Direct attack:** Ask the harmful question directly in a fresh chat
-2. **Decomposed subtasks:** Ask each safe subtask in separate fresh chats  
-3. **Synthesis test:** Give the model both subtask answers and ask it to combine them
+1. Direct attack: Ask the harmful question directly in a fresh chat
+2. Decomposed subtasks: Ask each safe subtask in separate fresh chats  
+3. Synthesis test: Give the model both subtask answers and ask it to combine them
 
 #### Results
 
