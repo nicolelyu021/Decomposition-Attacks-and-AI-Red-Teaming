@@ -58,7 +58,7 @@ The decomposition attack worked exactly as Jones et al. described. It worked in 
 
 The network scanning case was different. GPT answered it directly but added legal warnings and defensive context. This suggests the safety boundary treats reconnaissance knowledge differently than exploitation techniques.
 
-### Why this matters
+#### Why this matters
 
 This test shows that current safety filters work at the query level but fail at the session level. Each subtask looks harmless on its own. There's nothing wrong with explaining what a buffer overflow is or listing mitigation techniques. But an adversary can use those pieces to reconstruct attack knowledge.
 
