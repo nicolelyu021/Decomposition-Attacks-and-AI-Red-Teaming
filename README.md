@@ -68,13 +68,44 @@ I successfully replicated the Jones et al. threat model on cybersecurity content
 
 ---
 
+
 ## 2.1.3 — Assessing Another Paper on the Same Topic
 
-**Glukhov et al. (2024)**, *Breach by a Thousand Leaks*, extends the study of decomposition attacks by showing that **information leakage can accumulate across safe queries**.  
-- Their key innovation is a *mathematical leakage framework* that measures incremental risk from sequential responses.  
-- They formalize “information gain per interaction,” allowing quantitative auditing of how small benign outputs compose into harmful knowledge.
+Glukhov et al.'s "Breach by a Thousand Leaks" builds on Jones et al. but adds something important. Jones showed qualitatively that you can chain safe models to get unsafe outputs. Glukhov makes that quantifiable.
 
-This work moves from anecdotal jailbreak demos toward a **principled measurement** of cumulative information flow — critical for designing safety metrics and monitoring systems.
+#### What's new here
+
+Their main contribution is a mathematical metric called **impermissible information leakage (IIL)**. It measures how much additional confidence an adversary gains in a forbidden answer after each interaction. This lets them:
+
+* Numerically compare different attacks and defenses
+* Prove bounds on leakage
+* Formalize a safety-utility trade-off (the safer you make a model, the less useful it becomes)
+
+The math framework isn't just notation for notation's sake. It gives you a unit of measurement for danger instead of a binary safe/unsafe label. Jones couldn't do that.
+
+#### Leakage vs. decomposition
+
+Jones focused on one-shot composition. You combine several safe answers to reconstruct an unsafe one all at once.
+
+Glukhov reframes this as multi-turn accumulation. Each answer leaks a small piece of forbidden knowledge. These pieces raise the adversary's confidence gradually until it crosses a threshold.
+
+They're related ideas, but Glukhov's framing enables continuous risk measurement (like "0.1 bits leaked per query") instead of all-or-nothing jailbreak success. That shift matters for building real monitoring systems.
+
+#### What the math actually accomplishes
+
+The mathematical framework enables three things:
+
+1. Measure danger in real time: You can compute IIL to see how risky a conversation is becoming as it progresses.
+
+2. Detect attacks: You could flag conversations where cumulative IIL exceeds some leak budget ε.
+
+3. Design defenses: They formalize "Information Censorship" which adds controlled noise or empty replies so expected IIL stays below ε. This is essentially differential privacy for safety. It bounds what an adversary can infer even across many benign-looking turns.
+
+#### My take
+
+This is Jones plus math, but it's useful math. The "inferential adversary" framing feels less like a new attack vector and more like a bridge between AI safety and privacy theory. What's impressive is that they prove perfect robustness is impossible without losing utility. The safety-usefulness trade-off formalizes the intuition that alignment researchers keep repeating but couldn't quantify before.
+
+My main skepticism is that the experiments are still toy-level. I'd want to see whether IIL actually correlates with real-world misuse detection. Can you predict which conversations lead to actual harm based on IIL scores? That's the empirical validation this framework still needs.
 
 ---
 
