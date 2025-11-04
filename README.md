@@ -14,15 +14,19 @@ Each section below corresponds to the technical prompts (2.1.1–2.1.6) outlined
 
 The **Virology Capabilities Test (VCT)** [Göting et al., 2025] benchmark evaluates whether large language models (LLMs) possess *virology reasoning* and laboratory procedure knowledge relevant to biosecurity risks.  
 - The benchmark tests model ability to answer stepwise virology Q&A tasks (e.g., PCR steps, genome assembly).  
-- The strongest model (OpenAI o3) achieved **43.8% accuracy**, exceeding average virology graduate student performance.  
+- The strongest model (OpenAI o3) achieved 43.8% accuracy, exceeding average virology graduate student performance.  
 
-**Concerns / Limitations**
-- The dataset relies heavily on public textbook-style questions and lacks strict filtering for sensitive dual-use content.  
-- The scoring metric rewards factual correctness even when the output could be contextually unsafe.  
-- The authors acknowledge models “hallucinate” experimental steps, suggesting risk evaluations may be inconsistent.
+The core issue: test performance ≠ actual capability
 
-**Most striking point**
-LLMs already outperform domain experts on safety-relevant knowledge tasks. Even if not yet autonomous, they can meaningfully aid misuse if unrestricted.
+My biggest concern is that they're treating semantic recognition as if it's the same as embodied know-how. Being able to identify what went wrong in a photograph of a plaque assay is not the same as fixing it in a BSL-2 lab. It's like saying a model that can diagnose car problems from text could rebuild an engine. The reasoning might be there, but the situational judgment and physical intuition aren't captured at all.
+
+The "validated answers" problem
+
+They claim their answers are expert-validated. But then they admit that experts frequently disagreed. Some "correct" answers just reflect consensus opinion rather than ground truth. This means the LLMs might just be doing sophisticated pattern-matching on what experts collectively believe. That's not the same as actually mastering the underlying skills. It's wisdom-of-the-crowd mimicry dressed up as intelligence.
+
+If o3 genuinely outperforms 34 of 36 experts on their own subspecialties, that means something important. The pretraining corpora already encode high-fidelity lab heuristics at scale. We may have accidentally crowdsourced decades of specialized lab practice into public models without realizing it. That's a massive governance blindspot.
+
+What I'd demand as a reviewer: Run a wet-lab uplift study. Have human teams perform actual experiments with and without model assistance. Then see if VCT scores predict real-world success rates. Without that, this is still simulation-grade evidence making claims about physical-world risk.
 
 ---
 
