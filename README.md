@@ -1,7 +1,5 @@
 # Decomposition-Attacks-and-AI-Red-Teaming
 
-This repository is prepared as part of the Carnegie AI Safety Initiative (CASI) x MATS-style fellowship application.  
-Carnegie Mellon University
 ---
 
 ## Overview
