@@ -4,7 +4,6 @@
 
 ## Overview
 This repository contains my responses to the CASI–MATS Pilot Research Fellowship Application.
-Each section below corresponds to the technical prompts (2.1.1–2.1.6) outlined in the official call for participation.
 
 ---
 
